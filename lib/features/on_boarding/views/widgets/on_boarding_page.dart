@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:health_tracker/core/utils/app_styles.dart';
 
 class OnBoardingPage extends StatelessWidget {
-  final String image, title, description;
-  const OnBoardingPage({super.key, required this.image, required this.title, required this.description});
+  final Map map;
+  const OnBoardingPage({super.key, required this.map});
 
   @override
   Widget build(BuildContext context) {
@@ -16,16 +16,16 @@ class OnBoardingPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset(image,width: width,fit: BoxFit.fitWidth,),
+            Image.asset(map['image'],width: width,fit: BoxFit.fitWidth,),
             const SizedBox(height: 40,),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Text(title, style: AppStyles.bold24,),
+              child: Text(map['title'], style: AppStyles.bold24,),
             ),
             const SizedBox(height: 15,),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Text(description, style: AppStyles.regular14,),
+              child: Text(map['description'], style: AppStyles.regular14,),
             ),
           ],
         ),

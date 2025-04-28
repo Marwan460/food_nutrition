@@ -9,4 +9,7 @@ class AppColors {
   static const Color grey = Color(0xff786F72);
   static const Color grey2 = Color(0xffF7F8F8);
   static const Color white = Colors.white;
+
+  static const List<Color> primaryG = [primary1, primary2];
+  static const List<Color> secondaryG = [secondary1, secondary2];
 }

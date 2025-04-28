@@ -6,8 +6,9 @@
 class AssetsRes {
   AssetsRes._();
 
+  static const String PROJECT_NAME = 'health_tracker';
+  static const String PROJECT_VERSION = '1.0.0+1';
   static const String ON_1 = 'assets/images/on_1.png';
   static const String ON_2 = 'assets/images/on_2.png';
   static const String ON_3 = 'assets/images/on_3.png';
-  static const String ON_4 = 'assets/images/on_4.png';
 }
