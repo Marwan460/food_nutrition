@@ -8,7 +8,12 @@ class AssetsRes {
 
   static const String PROJECT_NAME = 'health_tracker';
   static const String PROJECT_VERSION = '1.0.0+1';
+  static const String EMAIL = 'assets/images/email.png';
+  static const String FACEBOOK = 'assets/images/facebook.png';
+  static const String GOOGLE = 'assets/images/google.png';
+  static const String LOCK = 'assets/images/lock.png';
   static const String ON_1 = 'assets/images/on_1.png';
   static const String ON_2 = 'assets/images/on_2.png';
   static const String ON_3 = 'assets/images/on_3.png';
+  static const String USER_TEXT = 'assets/images/user_text.png';
 }

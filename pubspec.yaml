@@ -93,6 +93,11 @@ flutter:
       fonts:
         - asset: assets/fonts/Poppins.ttf
   assets:
+    - assets/images/email.png
+    - assets/images/facebook.png
+    - assets/images/google.png
+    - assets/images/lock.png
     - assets/images/on_1.png
     - assets/images/on_2.png
     - assets/images/on_3.png
+    - assets/images/user_text.png

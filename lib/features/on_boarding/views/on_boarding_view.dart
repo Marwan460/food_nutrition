@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:health_tracker/core/utils/app_colors.dart';
-import 'package:health_tracker/features/on_boarding/views/widgets/custom_button.dart';
+import 'package:health_tracker/features/Auth/presentation/views/signup_view.dart';
+import 'package:health_tracker/features/on_boarding/views/widgets/custom_icon.dart';
 import 'package:health_tracker/features/on_boarding/views/widgets/on_boarding_page.dart';
 import 'package:health_tracker/res/assets_res.dart';
 
@@ -40,14 +41,14 @@ class _OnBoardingViewState extends State<OnBoardingView> {
     {
       'image': AssetsRes.ON_3,
       'title': 'Track Your Health',
-      'description':
-          'With amazing inbuilt tools you can track your progress.'
+      'description': 'With amazing inbuilt tools you can track your progress.'
     },
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.white,
       body: Stack(
         alignment: Alignment.bottomRight,
         children: [
@@ -61,33 +62,41 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                 );
               }),
           Padding(
-              padding: const EdgeInsets.only(right: 20, bottom: 30),
-              child: SizedBox(
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    SizedBox(
-                      width: 70,
-                      height: 70,
-                      child: CircularProgressIndicator(
-                        value: (selectedPage + 1) / 3,
-                        color: AppColors.primary1,
-                        strokeWidth: 2,
-                      ),
+            padding: const EdgeInsets.only(right: 20, bottom: 30),
+            child: SizedBox(
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  SizedBox(
+                    width: 70,
+                    height: 70,
+                    child: CircularProgressIndicator(
+                      value: (selectedPage + 1) / 3,
+                      color: AppColors.primary1,
+                      strokeWidth: 2,
                     ),
-                    CustomButton(onPressed: () {
-                      if (selectedPage < 2) {
-                        selectedPage = selectedPage + 1;
-                        controller.animateToPage(
-                          selectedPage,
-                          duration: const Duration(milliseconds: 600),
-                          curve: Curves.easeIn,
-                        );
-                      }
-                    }),
-                  ],
-                ),
-              ),)
+                  ),
+                  CustomIcon(onPressed: () {
+                    if (selectedPage < 2) {
+                      selectedPage = selectedPage + 1;
+                      controller.animateToPage(
+                        selectedPage,
+                        duration: const Duration(milliseconds: 600),
+                        curve: Curves.easeIn,
+                      );
+                    } else {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const SignupView(),
+                        ),
+                      );
+                    }
+                  }),
+                ],
+              ),
+            ),
+          )
         ],
       ),
     );
