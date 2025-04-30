@@ -4,15 +4,13 @@ import 'package:health_tracker/core/utils/app_styles.dart';
 import 'package:health_tracker/core/widgets/custom_button.dart';
 import 'package:health_tracker/core/widgets/custom_text_field.dart';
 import 'package:health_tracker/core/widgets/or_divider.dart';
-import 'package:health_tracker/features/Auth/presentation/views/login_view.dart';
 import 'package:health_tracker/features/Auth/presentation/views/widgets/password_field.dart';
 import 'package:health_tracker/features/Auth/presentation/views/widgets/social_icon.dart';
-import 'package:health_tracker/features/on_boarding/views/widgets/custom_check_box.dart';
 
 import '../../../../res/assets_res.dart';
 
-class SignupView extends StatelessWidget {
-  const SignupView({super.key});
+class LoginView extends StatelessWidget {
+  const LoginView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,29 +24,15 @@ class SignupView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
-                  'Hey there,',
+                  'Hey there',
                   style: AppStyles.regular16,
                 ),
                 const Text(
-                  'Create an Account',
+                  'Welcome Back',
                   style: AppStyles.bold20,
                 ),
                 const SizedBox(
                   height: 30,
-                ),
-                const CustomTextField(
-                  hintText: 'First Name',
-                  image: AssetsRes.USER_TEXT,
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
-                const CustomTextField(
-                  hintText: 'Last Name',
-                  image: AssetsRes.USER_TEXT,
-                ),
-                const SizedBox(
-                  height: 15,
                 ),
                 const CustomTextField(
                   hintText: 'Email',
@@ -62,37 +46,49 @@ class SignupView extends StatelessWidget {
                 const SizedBox(
                   height: 10,
                 ),
-                Row(
-                  children: [
-                    const CustomCheckBox(),
-                    Expanded(
-                        child: Text(
-                      'By continuing you accept our Privacy Policy and Term of Use',
-                      style: AppStyles.regular14.copyWith(fontSize: 10),
-                    ),),
-                  ],
+                Text(
+                  'Forgot your password?',
+                  style: AppStyles.medium12.copyWith(
+                    decoration: TextDecoration.underline,
+                  ),
                 ),
-                const SizedBox(height: 120,),
-                CustomButton(onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginView()));
-                }, title: 'Register'),
-                const SizedBox(height: 20,),
+                const SizedBox(
+                  height: 200,
+                ),
+                CustomButton(onPressed: () {}, title: 'Login'),
+                const SizedBox(
+                  height: 20,
+                ),
                 const OrDivider(),
-                const SizedBox(height: 20,),
+                const SizedBox(
+                  height: 20,
+                ),
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SocialIcon(image: AssetsRes.GOOGLE),
-                    SizedBox(width: 30,),
-                    SocialIcon(image: AssetsRes.FACEBOOK)
+                    SizedBox(
+                      width: 30,
+                    ),
+                    SocialIcon(image: AssetsRes.FACEBOOK),
                   ],
                 ),
-                const SizedBox(height: 30,),
+                const SizedBox(
+                  height: 30,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Already have an account?' ,style: AppStyles.regular14.copyWith(color: AppColors.black),),
-                    const Text('Login',style: AppStyles.regular14,)
+                    Text(
+                      'Don’t have an account yet? ',
+                      style:
+                          AppStyles.regular14.copyWith(color: AppColors.black),
+                    ),
+                    Text(
+                      'Register',
+                      style: AppStyles.medium12.copyWith(
+                          fontSize: 14, color: const Color(0xffC58BF2)),
+                    )
                   ],
                 )
               ],

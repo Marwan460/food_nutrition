@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../res/font_res.dart';
 import 'app_colors.dart';
 
-class AppStyles {
+abstract class AppStyles {
   static const TextStyle bold24 = TextStyle(
     fontFamily: FontRes.POPPINS,
     fontWeight: FontWeight.bold,
@@ -30,5 +30,12 @@ class AppStyles {
       fontWeight: FontWeight.w400,
       fontSize: 16,
       color: AppColors.black
+  );
+
+  static const TextStyle medium12 = TextStyle(
+      fontFamily: FontRes.POPPINS,
+      fontWeight: FontWeight.w500,
+      fontSize: 12,
+      color: AppColors.grey
   );
 }
