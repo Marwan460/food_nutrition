@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:health_tracker/core/utils/app_colors.dart';
+
+import '../utils/app_colors.dart';
 
 enum CustomButtonType { bgGradient, bgSGradient, textGradient }
 

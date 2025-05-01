@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:health_tracker/core/utils/app_colors.dart';
+
+import '../../../../core/utils/app_colors.dart';
 
 class CustomCheckBox extends StatefulWidget {
   const CustomCheckBox({super.key});

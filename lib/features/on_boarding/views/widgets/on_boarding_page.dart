@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:health_tracker/core/utils/app_styles.dart';
+
+import '../../../../core/utils/app_styles.dart';
 
 class OnBoardingPage extends StatelessWidget {
   final Map map;

@@ -1,9 +1,18 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:health_tracker/core/utils/app_colors.dart';
-import 'package:health_tracker/features/on_boarding/views/on_boarding_view.dart';
-import 'package:health_tracker/res/font_res.dart';
+import 'package:food_nutrition/res/font_res.dart';
 
-void main() {
+import 'core/utils/app_colors.dart';
+import 'features/on_boarding/views/on_boarding_view.dart';
+import 'firebase_options.dart';
+
+
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -15,7 +24,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Food Nutrition',
       theme: ThemeData(
         primaryColor: AppColors.primary1,
         fontFamily: FontRes.POPPINS

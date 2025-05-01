@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:health_tracker/core/utils/app_styles.dart';
+
+import '../utils/app_styles.dart';
 
 class OrDivider extends StatelessWidget {
   const OrDivider({super.key});

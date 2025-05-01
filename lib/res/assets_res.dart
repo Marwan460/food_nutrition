@@ -6,7 +6,7 @@
 class AssetsRes {
   AssetsRes._();
 
-  static const String PROJECT_NAME = 'health_tracker';
+  static const String PROJECT_NAME = 'food_nutrition';
   static const String PROJECT_VERSION = '1.0.0+1';
   static const String COMPLETE_PROFILE = 'assets/images/complete_profile.png';
   static const String DATE = 'assets/images/date.png';

@@ -6,7 +6,7 @@
 class FontRes {
   FontRes._();
 
-  static const String PROJECT_NAME = 'health_tracker';
+  static const String PROJECT_NAME = 'food_nutrition';
   static const String PROJECT_VERSION = '1.0.0+1';
   static const String POPPINS = 'Poppins';
 }

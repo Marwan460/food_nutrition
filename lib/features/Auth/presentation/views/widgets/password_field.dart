@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:health_tracker/core/utils/app_colors.dart';
-import 'package:health_tracker/core/widgets/custom_text_field.dart';
-import 'package:health_tracker/res/assets_res.dart';
+
+import '../../../../../core/utils/app_colors.dart';
+import '../../../../../core/widgets/custom_text_field.dart';
+import '../../../../../res/assets_res.dart';
 
 class PasswordField extends StatefulWidget {
   const PasswordField({super.key});

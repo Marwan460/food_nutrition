@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:health_tracker/core/utils/app_colors.dart';
-import 'package:health_tracker/features/Auth/presentation/views/signup_view.dart';
-import 'package:health_tracker/features/on_boarding/views/widgets/custom_icon.dart';
-import 'package:health_tracker/features/on_boarding/views/widgets/on_boarding_page.dart';
-import 'package:health_tracker/res/assets_res.dart';
+import 'package:food_nutrition/features/on_boarding/views/widgets/custom_icon.dart';
+import 'package:food_nutrition/features/on_boarding/views/widgets/on_boarding_page.dart';
+
+import '../../../core/utils/app_colors.dart';
+import '../../../res/assets_res.dart';
+import '../../Auth/presentation/views/signup_view.dart';
+
 
 class OnBoardingView extends StatefulWidget {
   const OnBoardingView({super.key});

@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:health_tracker/core/utils/app_colors.dart';
-import 'package:health_tracker/core/utils/app_styles.dart';
-import 'package:health_tracker/core/widgets/custom_button.dart';
-import 'package:health_tracker/core/widgets/custom_text_field.dart';
-import 'package:health_tracker/core/widgets/or_divider.dart';
-import 'package:health_tracker/features/Auth/presentation/views/widgets/password_field.dart';
-import 'package:health_tracker/features/Auth/presentation/views/widgets/social_icon.dart';
+import 'package:food_nutrition/features/Auth/presentation/views/widgets/password_field.dart';
+import 'package:food_nutrition/features/Auth/presentation/views/widgets/social_icon.dart';
 
+
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_styles.dart';
+import '../../../../core/widgets/custom_button.dart';
+import '../../../../core/widgets/custom_text_field.dart';
+import '../../../../core/widgets/or_divider.dart';
 import '../../../../res/assets_res.dart';
+import 'complete_profile.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -55,7 +57,15 @@ class LoginView extends StatelessWidget {
                 const SizedBox(
                   height: 200,
                 ),
-                CustomButton(onPressed: () {}, title: 'Login'),
+                CustomButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const CompleteProfile()),
+                      );
+                    },
+                    title: 'Login'),
                 const SizedBox(
                   height: 20,
                 ),

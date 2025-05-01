@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:health_tracker/core/utils/app_colors.dart';
-import 'package:health_tracker/core/utils/app_styles.dart';
-import 'package:health_tracker/core/widgets/custom_button.dart';
-import 'package:health_tracker/core/widgets/custom_text_field.dart';
-import 'package:health_tracker/core/widgets/or_divider.dart';
-import 'package:health_tracker/features/Auth/presentation/views/login_view.dart';
-import 'package:health_tracker/features/Auth/presentation/views/widgets/password_field.dart';
-import 'package:health_tracker/features/Auth/presentation/views/widgets/social_icon.dart';
-import 'package:health_tracker/features/on_boarding/views/widgets/custom_check_box.dart';
+import 'package:food_nutrition/features/Auth/presentation/views/widgets/password_field.dart';
+import 'package:food_nutrition/features/Auth/presentation/views/widgets/social_icon.dart';
 
+
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_styles.dart';
+import '../../../../core/widgets/custom_button.dart';
+import '../../../../core/widgets/custom_text_field.dart';
+import '../../../../core/widgets/or_divider.dart';
 import '../../../../res/assets_res.dart';
+import '../../../on_boarding/views/widgets/custom_check_box.dart';
+import 'login_view.dart';
 
 class SignupView extends StatelessWidget {
   const SignupView({super.key});

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:health_tracker/core/utils/app_colors.dart';
+
+import '../../../../../core/utils/app_colors.dart';
 
 class SocialIcon extends StatelessWidget {
   final String image;
