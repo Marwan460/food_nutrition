@@ -5,7 +5,8 @@ import '../../../../../core/widgets/custom_text_field.dart';
 import '../../../../../res/assets_res.dart';
 
 class PasswordField extends StatefulWidget {
-  const PasswordField({super.key});
+  final void Function(String?)? onSaved;
+  const PasswordField({super.key, this.onSaved});
 
   @override
   State<PasswordField> createState() => _PasswordFieldState();
@@ -17,6 +18,7 @@ class _PasswordFieldState extends State<PasswordField> {
   @override
   Widget build(BuildContext context) {
     return CustomTextField(
+      onSaved: widget.onSaved,
       keyboardType: TextInputType.visiblePassword,
       obscureText: obscureText,
       hintText: 'Password',

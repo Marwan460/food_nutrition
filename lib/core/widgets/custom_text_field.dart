@@ -9,6 +9,7 @@ class CustomTextField extends StatelessWidget {
   final TextInputType? keyboardType;
   final bool obscureText;
   final EdgeInsets? margin;
+  final void Function(String?)? onSaved;
 
   const CustomTextField(
       {super.key,
@@ -18,7 +19,7 @@ class CustomTextField extends StatelessWidget {
       this.controller,
       this.keyboardType,
       this.margin,
-      this.obscureText = false});
+      this.obscureText = false, this.onSaved});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,14 @@ class CustomTextField extends StatelessWidget {
       margin: margin,
       decoration: BoxDecoration(
           color: AppColors.lightGrey, borderRadius: BorderRadius.circular(15)),
-      child: TextField(
+      child: TextFormField(
+        onSaved: onSaved,
+        validator: (value){
+          if(value == null || value.isEmpty){
+            return 'Field is required';
+          }
+          return null;
+        },
         obscureText: obscureText,
         controller: controller,
         keyboardType: keyboardType,

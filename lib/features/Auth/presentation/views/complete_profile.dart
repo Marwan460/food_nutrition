@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_nutrition/core/widgets/custom_button.dart';
 import 'package:food_nutrition/core/widgets/custom_date_picker.dart';
 import 'package:food_nutrition/core/widgets/custom_text_field.dart';
+import 'package:food_nutrition/features/Auth/presentation/views/login_view.dart';
 import 'package:food_nutrition/features/Auth/presentation/views/widgets/custom_weight_and_height_container.dart';
 
 import '../../../../core/utils/app_colors.dart';
@@ -64,7 +65,9 @@ class _CompleteProfileState extends State<CompleteProfile> {
                 const SizedBox(height: 15,),
                 const CustomWeightAndHeightContainer(image: AssetsRes.HIGHT, hintText: 'CM'),
                 const SizedBox(height: 30,),
-                CustomButton(onPressed: (){}, title: 'Confirm')
+                CustomButton(onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => LoginView()));
+                }, title: 'Confirm')
               ],
             ),
           ),
