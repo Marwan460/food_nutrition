@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:food_nutrition/core/widgets/custom_button.dart';
 import 'package:food_nutrition/features/on_boarding/views/widgets/custom_icon.dart';
 import 'package:food_nutrition/features/on_boarding/views/widgets/on_boarding_page.dart';
 
 import '../../../core/utils/app_colors.dart';
 import '../../../res/assets_res.dart';
 import '../../Auth/presentation/views/signup_view.dart';
-
 
 class OnBoardingView extends StatefulWidget {
   const OnBoardingView({super.key});
@@ -17,12 +17,18 @@ class OnBoardingView extends StatefulWidget {
 class _OnBoardingViewState extends State<OnBoardingView> {
   final PageController controller = PageController();
   int selectedPage = 0;
+  bool isLastPage = false;
 
   @override
   void initState() {
     super.initState();
     controller.addListener(() {
       selectedPage = controller.page?.round() ?? 0;
+      if (controller.page!.round() == 2) {
+        isLastPage = true;
+      } else {
+        isLastPage = false;
+      }
       setState(() {});
     });
   }
@@ -69,7 +75,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
               child: Stack(
                 alignment: Alignment.center,
                 children: [
-                  SizedBox(
+                  isLastPage ? const SizedBox() : SizedBox(
                     width: 70,
                     height: 70,
                     child: CircularProgressIndicator(
@@ -78,23 +84,27 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                       strokeWidth: 2,
                     ),
                   ),
-                  CustomIcon(onPressed: () {
-                    if (selectedPage < 2) {
-                      selectedPage = selectedPage + 1;
-                      controller.animateToPage(
-                        selectedPage,
-                        duration: const Duration(milliseconds: 600),
-                        curve: Curves.easeIn,
-                      );
-                    } else {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const SignupView(),
-                        ),
-                      );
-                    }
-                  }),
+                  isLastPage
+                      ? Padding(
+                        padding: const EdgeInsets.only(left: 20,bottom: 20),
+                        child: CustomButton(onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const SignupView(),
+                            ));
+                        }, title: 'Get Started'),
+                      )
+                      : CustomIcon(onPressed: () {
+                          if (selectedPage < 2) {
+                            selectedPage = selectedPage + 1;
+                            controller.animateToPage(
+                              selectedPage,
+                              duration: const Duration(milliseconds: 600),
+                              curve: Curves.easeIn,
+                            );
+                          }
+                        }),
                 ],
               ),
             ),

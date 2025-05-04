@@ -5,10 +5,11 @@ import '../../../../../core/utils/app_styles.dart';
 import '../../../../../core/widgets/custom_text_field.dart';
 
 class CustomWeightAndHeightContainer extends StatelessWidget {
-  final String image, hintText;
+  final String image, hintText, value;
+  final void Function(String?)? onSaved;
 
   const CustomWeightAndHeightContainer(
-      {super.key, required this.image, required this.hintText});
+      {super.key, required this.image, required this.hintText, this.onSaved, required this.value});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,8 @@ class CustomWeightAndHeightContainer extends StatelessWidget {
       children: [
         Expanded(
           child: CustomTextField(
-            hintText: 'Your Weight',
+            onSaved: onSaved,
+            hintText: value,
             image: image,
             keyboardType: TextInputType.number,
           ),
