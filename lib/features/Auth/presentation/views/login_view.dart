@@ -1,110 +1,44 @@
 import 'package:flutter/material.dart';
-import 'package:food_nutrition/features/Auth/presentation/views/widgets/password_field.dart';
-import 'package:food_nutrition/features/Auth/presentation/views/widgets/social_icon.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:food_nutrition/core/widgets/custom_progress_hud.dart';
+import 'package:food_nutrition/features/Auth/presentation/views/widgets/login_view_body.dart';
+import 'package:food_nutrition/features/home/presentation/views/home_view.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
-
+import '../../../../core/services/get_it_service.dart';
 import '../../../../core/utils/app_colors.dart';
-import '../../../../core/utils/app_styles.dart';
-import '../../../../core/widgets/custom_button.dart';
-import '../../../../core/widgets/custom_text_field.dart';
-import '../../../../core/widgets/or_divider.dart';
-import '../../../../res/assets_res.dart';
-import 'complete_profile.dart';
+import '../../domain/repos/auth_repo.dart';
+import '../cubits/login_cubit/login_cubit.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.white,
-      body: SingleChildScrollView(
-        child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text(
-                  'Hey there',
-                  style: AppStyles.regular16,
-                ),
-                const Text(
-                  'Welcome Back',
-                  style: AppStyles.bold20,
-                ),
-                const SizedBox(
-                  height: 30,
-                ),
-                const CustomTextField(
-                  hintText: 'Email',
-                  image: AssetsRes.EMAIL,
-                  keyboardType: TextInputType.emailAddress,
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
-                const PasswordField(),
-                const SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  'Forgot your password?',
-                  style: AppStyles.medium12.copyWith(
-                    decoration: TextDecoration.underline,
-                  ),
-                ),
-                const SizedBox(
-                  height: 200,
-                ),
-                CustomButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const CompleteProfile()),
-                      );
-                    },
-                    title: 'Login'),
-                const SizedBox(
-                  height: 20,
-                ),
-                const OrDivider(),
-                const SizedBox(
-                  height: 20,
-                ),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SocialIcon(image: AssetsRes.GOOGLE),
-                    SizedBox(
-                      width: 30,
-                    ),
-                    SocialIcon(image: AssetsRes.FACEBOOK),
-                  ],
-                ),
-                const SizedBox(
-                  height: 30,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Don’t have an account yet? ',
-                      style:
-                          AppStyles.regular14.copyWith(color: AppColors.black),
-                    ),
-                    Text(
-                      'Register',
-                      style: AppStyles.medium12.copyWith(
-                          fontSize: 14, color: const Color(0xffC58BF2)),
-                    )
-                  ],
-                )
-              ],
-            ),
-          ),
-        ),
+    return BlocProvider(
+      create: (context) => LoginCubit(getIt<AuthRepo>()),
+      child: Scaffold(
+        backgroundColor: AppColors.white,
+        body: Builder(builder: (context) {
+          return BlocConsumer<LoginCubit, LoginState>(
+            listener: (context, state) {
+              if (state is LoginSuccess) {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const HomeView()));
+              }
+              if (state is LoginFailure) {
+                ScaffoldMessenger.of(context)
+                    .showSnackBar(SnackBar(content: Text(state.message)));
+              }
+            },
+            builder: (context, state) {
+              return CustomProgressHud(
+                isLoading: state is LoginLoading ? true : false,
+                child: const LoginViewBody(),
+              );
+            },
+          );
+        }),
       ),
     );
   }

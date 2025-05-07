@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:food_nutrition/core/widgets/custom_progress_hud.dart';
 import 'package:food_nutrition/features/Auth/presentation/cubits/complete_profile_cubit/complete_profile_cubit.dart';
 import 'package:food_nutrition/features/Auth/presentation/views/widgets/complete_profile_view_body.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
@@ -29,9 +30,10 @@ class _CompleteProfileState extends State<CompleteProfile> {
             }
           },
           builder: (context, state) {
-            return ModalProgressHUD(
-                inAsyncCall: state is CompleteProfileLoading ? true : false,
-                child: const CompleteProfileViewBody());
+            return CustomProgressHud(
+              isLoading: state is CompleteProfileLoading ? true : false,
+              child: const CompleteProfileViewBody(),
+            );
           },
         ),
       ),

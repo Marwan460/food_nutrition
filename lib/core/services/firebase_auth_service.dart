@@ -34,4 +34,25 @@ class FirebaseAuthService {
           message: 'An error occurred while creating the user.');
     }
   }
+
+  Future<User> loginWithEmailAndPassword({required String email, required String password}) async {
+    try {
+      final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: email,
+          password: password
+      );
+      return credential.user!;
+    } on FirebaseAuthException catch (e) {
+      log('Exception in FirebaseAuthService.loginWithEmailAndPassword: ${e.toString()} and code is ${e.code}');
+      if (e.code == 'user-not-found') {
+        throw CustomException(message: 'password or email is incorrect.');
+      } else if (e.code == 'wrong-password') {
+        throw CustomException(message: 'password or email is incorrect.');
+      } else if (e.code == 'network-request-failed') {
+        throw CustomException(message: 'There was a problem with the network.');
+      } else {
+        throw CustomException(message: 'An error occurred while logging in.');
+      }
+    }
+  }
 }

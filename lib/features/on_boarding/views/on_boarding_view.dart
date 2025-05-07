@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_nutrition/core/widgets/custom_button.dart';
+import 'package:food_nutrition/features/Auth/presentation/views/login_view.dart';
 import 'package:food_nutrition/features/on_boarding/views/widgets/custom_icon.dart';
 import 'package:food_nutrition/features/on_boarding/views/widgets/on_boarding_page.dart';
 
@@ -91,7 +92,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const SignupView(),
+                              builder: (context) => const LoginView(),
                             ));
                         }, title: 'Get Started'),
                       )
