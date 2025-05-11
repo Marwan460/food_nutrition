@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_nutrition/features/Auth/presentation/views/widgets/password_field.dart';
-import 'package:food_nutrition/features/Auth/presentation/views/widgets/social_icon.dart';
-
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_styles.dart';
 import '../../../../../core/widgets/custom_button.dart';
@@ -102,15 +100,6 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                 }, title: 'Register'),
                 const SizedBox(height: 20,),
                 const OrDivider(),
-                const SizedBox(height: 20,),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SocialIcon(image: AssetsRes.GOOGLE),
-                    SizedBox(width: 30,),
-                    SocialIcon(image: AssetsRes.FACEBOOK)
-                  ],
-                ),
                 const SizedBox(height: 30,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

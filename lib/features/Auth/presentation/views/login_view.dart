@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_nutrition/core/widgets/custom_progress_hud.dart';
 import 'package:food_nutrition/features/Auth/presentation/views/widgets/login_view_body.dart';
 import 'package:food_nutrition/features/home/presentation/views/home_view.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:food_nutrition/features/main_tab/presentation/view/main_tab_view.dart';
 
 import '../../../../core/services/get_it_service.dart';
 import '../../../../core/utils/app_colors.dart';
@@ -24,7 +24,7 @@ class LoginView extends StatelessWidget {
             listener: (context, state) {
               if (state is LoginSuccess) {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const HomeView()));
+                    MaterialPageRoute(builder: (context) => const MainTabView()));
               }
               if (state is LoginFailure) {
                 ScaffoldMessenger.of(context)

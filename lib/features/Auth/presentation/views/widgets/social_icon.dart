@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import '../../../../../core/utils/app_colors.dart';
 
 class SocialIcon extends StatelessWidget {
+  final void Function()? onTap;
   final String image;
-  const SocialIcon({super.key, required this.image});
+  const SocialIcon({super.key, required this.image, this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){},
+      onTap: onTap,
       child: Container(
         height: 50,
         width: 50,

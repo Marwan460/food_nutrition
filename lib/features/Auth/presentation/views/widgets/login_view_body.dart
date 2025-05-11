@@ -10,6 +10,7 @@ import '../../../../../core/widgets/custom_text_field.dart';
 import '../../../../../core/widgets/or_divider.dart';
 import '../../../../../res/assets_res.dart';
 import '../../cubits/login_cubit/login_cubit.dart';
+import '../signup_view.dart';
 
 class LoginViewBody extends StatefulWidget {
   const LoginViewBody({
@@ -92,19 +93,6 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 ),
                 const OrDivider(),
                 const SizedBox(
-                  height: 20,
-                ),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SocialIcon(image: AssetsRes.GOOGLE),
-                    SizedBox(
-                      width: 30,
-                    ),
-                    SocialIcon(image: AssetsRes.FACEBOOK),
-                  ],
-                ),
-                const SizedBox(
                   height: 30,
                 ),
                 Row(
@@ -115,10 +103,18 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                       style:
                       AppStyles.regular14.copyWith(color: AppColors.black),
                     ),
-                    Text(
-                      'Register',
-                      style: AppStyles.medium12.copyWith(
-                          fontSize: 14, color: const Color(0xffC58BF2)),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const SignupView()));
+                      },
+                      child: Text(
+                        'Register',
+                        style: AppStyles.medium12.copyWith(
+                            fontSize: 14, color: const Color(0xffC58BF2)),
+                      ),
                     )
                   ],
                 )

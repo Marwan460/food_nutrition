@@ -8,6 +8,13 @@ class AssetsRes {
 
   static const String PROJECT_NAME = 'food_nutrition';
   static const String PROJECT_VERSION = '1.0.0+1';
+  static const String HOME = 'assets/images/Home.png';
+  static const String HOME_SELECTED = 'assets/images/Home_selected.png';
+  static const String PROFILE_SELECTED = 'assets/images/Profile-Selected.png';
+  static const String PROFILE = 'assets/images/Profile.png';
+  static const String SLEEP_GRAPH = 'assets/images/Sleep-Graph.png';
+  static const String BG_DOTS = 'assets/images/bg_dots.png';
+  static const String CHAT_BOT = 'assets/images/chat-bot.png';
   static const String COMPLETE_PROFILE = 'assets/images/complete_profile.png';
   static const String DATE = 'assets/images/date.png';
   static const String EMAIL = 'assets/images/email.png';

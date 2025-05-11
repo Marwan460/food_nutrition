@@ -38,4 +38,18 @@ abstract class AppStyles {
       fontSize: 12,
       color: AppColors.grey
   );
+
+  static const TextStyle bold14 = TextStyle(
+      fontFamily: FontRes.POPPINS,
+      fontWeight: FontWeight.bold,
+      fontSize: 14,
+      color: AppColors.black
+  );
+
+  static const TextStyle semiBold14 = TextStyle(
+      fontFamily: FontRes.POPPINS,
+      fontWeight: FontWeight.w600,
+      fontSize: 14,
+      color: AppColors.primary1
+  );
 }
