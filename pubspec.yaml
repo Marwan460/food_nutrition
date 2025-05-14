@@ -45,6 +45,9 @@ dependencies:
   cloud_firestore: ^5.6.7
   google_sign_in: ^6.2.2
   simple_animation_progress_bar: ^1.9.2
+  flutter_gemini: ^3.0.0
+  equatable: ^2.0.7
+  flutter_markdown: ^0.7.7+1
 
 
 dev_dependencies:
@@ -109,6 +112,7 @@ flutter:
     - assets/images/Profile-Selected.png
     - assets/images/Profile.png
     - assets/images/Sleep-Graph.png
+    - assets/images/ai_chat.png
     - assets/images/bg_dots.png
     - assets/images/chat-bot.png
     - assets/images/complete_profile.png
@@ -119,8 +123,11 @@ flutter:
     - assets/images/google.png
     - assets/images/hight.png
     - assets/images/lock.png
+    - assets/images/meal_icon.png
     - assets/images/on_1.png
     - assets/images/on_2.png
     - assets/images/on_3.png
+    - assets/images/selected_meal_icon.png
+    - assets/images/send_icon.png
     - assets/images/user_text.png
     - assets/images/weight.png

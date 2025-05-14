@@ -13,6 +13,7 @@ class AssetsRes {
   static const String PROFILE_SELECTED = 'assets/images/Profile-Selected.png';
   static const String PROFILE = 'assets/images/Profile.png';
   static const String SLEEP_GRAPH = 'assets/images/Sleep-Graph.png';
+  static const String AI_CHAT = 'assets/images/ai_chat.png';
   static const String BG_DOTS = 'assets/images/bg_dots.png';
   static const String CHAT_BOT = 'assets/images/chat-bot.png';
   static const String COMPLETE_PROFILE = 'assets/images/complete_profile.png';
@@ -23,9 +24,12 @@ class AssetsRes {
   static const String GOOGLE = 'assets/images/google.png';
   static const String HIGHT = 'assets/images/hight.png';
   static const String LOCK = 'assets/images/lock.png';
+  static const String MEAL_ICON = 'assets/images/meal_icon.png';
   static const String ON_1 = 'assets/images/on_1.png';
   static const String ON_2 = 'assets/images/on_2.png';
   static const String ON_3 = 'assets/images/on_3.png';
+  static const String SELECTED_MEAL_ICON = 'assets/images/selected_meal_icon.png';
+  static const String SEND_ICON = 'assets/images/send_icon.png';
   static const String USER_TEXT = 'assets/images/user_text.png';
   static const String WEIGHT = 'assets/images/weight.png';
 }

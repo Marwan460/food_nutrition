@@ -4,6 +4,7 @@ import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_styles.dart';
 import '../../../../../core/widgets/custom_button.dart';
 import '../../../../../res/assets_res.dart';
+import '../../../../ai_chat/presentation/views/ai_chat_view.dart';
 
 class CustomCard extends StatelessWidget {
   const CustomCard({super.key});
@@ -24,22 +25,19 @@ class CustomCard extends StatelessWidget {
             fit: BoxFit.fitHeight,
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(
-                horizontal: 15, vertical: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
             child: Row(
               children: [
                 Column(
                   children: [
                     Text(
                       'Chat with AI',
-                      style: AppStyles.bold20
-                          .copyWith(color: AppColors.white),
+                      style: AppStyles.bold20.copyWith(color: AppColors.white),
                     ),
                     Text(
                       'Explain your problem',
                       style: AppStyles.medium12.copyWith(
-                          color: AppColors.white,
-                          fontWeight: FontWeight.w400),
+                          color: AppColors.white, fontWeight: FontWeight.w400),
                     ),
                     const SizedBox(
                       height: 15,
@@ -48,7 +46,14 @@ class CustomCard extends StatelessWidget {
                       width: 120,
                       height: 40,
                       child: CustomButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const AiChatView(),
+                            ),
+                          );
+                        },
                         title: 'Start Chat',
                         fontSize: 12,
                         fontWeight: FontWeight.w600,

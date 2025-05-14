@@ -4,7 +4,6 @@ import 'package:food_nutrition/core/widgets/custom_progress_hud.dart';
 import 'package:food_nutrition/features/Auth/presentation/cubits/signup_cubit/signup_cubit.dart';
 import 'package:food_nutrition/features/Auth/presentation/views/complete_profile.dart';
 import 'package:food_nutrition/features/Auth/presentation/views/widgets/signup_view_body.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import '../../../../core/services/get_it_service.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../domain/repos/auth_repo.dart';

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_nutrition/core/widgets/custom_progress_hud.dart';
 import 'package:food_nutrition/features/Auth/presentation/views/widgets/login_view_body.dart';
-import 'package:food_nutrition/features/home/presentation/views/home_view.dart';
 import 'package:food_nutrition/features/main_tab/presentation/view/main_tab_view.dart';
 
 import '../../../../core/services/get_it_service.dart';

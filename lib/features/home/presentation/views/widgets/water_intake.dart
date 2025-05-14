@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_nutrition/features/home/presentation/views/widgets/custom_row.dart';
 import 'package:food_nutrition/features/home/presentation/views/widgets/water_intake_linear.dart';
-import 'package:food_nutrition/res/assets_res.dart';
-import 'package:simple_animation_progress_bar/simple_animation_progress_bar.dart';
-
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_styles.dart';
 
