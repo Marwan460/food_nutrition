@@ -43,11 +43,10 @@ dependencies:
   get_it: ^8.0.3
   modal_progress_hud_nsn: ^0.5.1
   cloud_firestore: ^5.6.7
-  google_sign_in: ^6.2.2
   simple_animation_progress_bar: ^1.9.2
   flutter_gemini: ^3.0.0
   equatable: ^2.0.7
-  flutter_markdown: ^0.7.7+1
+  table_calendar: ^3.2.0
 
 
 dev_dependencies:
@@ -117,6 +116,7 @@ flutter:
     - assets/images/chat-bot.png
     - assets/images/complete_profile.png
     - assets/images/date.png
+    - assets/images/dot.png
     - assets/images/email.png
     - assets/images/facebook.png
     - assets/images/gender.png

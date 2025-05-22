@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_nutrition/core/utils/app_colors.dart';
+import 'package:food_nutrition/features/meals/presentation/view/meal_view.dart';
 
 import '../../../../core/widgets/nav_bar_item.dart';
 import '../../../../res/assets_res.dart';
@@ -47,12 +48,12 @@ class _MainTabViewState extends State<MainTabView> {
                 },
               ),
               NavBarItem(
-                icon: AssetsRes.PROFILE,
-                selectIcon: AssetsRes.PROFILE_SELECTED,
+                icon: AssetsRes.MEAL_ICON,
+                selectIcon: AssetsRes.SELECTED_MEAL_ICON,
                 isActive: selectedIndex == 1,
                 onTap: () {
                   selectedIndex = 1;
-                  currentScreen = const SizedBox();
+                  currentScreen = const MealView();
                   if (mounted) {
                     setState(() {});
                   }

@@ -18,6 +18,7 @@ class AssetsRes {
   static const String CHAT_BOT = 'assets/images/chat-bot.png';
   static const String COMPLETE_PROFILE = 'assets/images/complete_profile.png';
   static const String DATE = 'assets/images/date.png';
+  static const String DOT = 'assets/images/dot.png';
   static const String EMAIL = 'assets/images/email.png';
   static const String FACEBOOK = 'assets/images/facebook.png';
   static const String GENDER = 'assets/images/gender.png';

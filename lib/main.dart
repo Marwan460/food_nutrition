@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_nutrition/core/services/get_it_service.dart';
+import 'package:food_nutrition/features/Auth/presentation/views/login_view.dart';
 import 'package:food_nutrition/res/font_res.dart';
 
 import 'core/services/custom_bloc_observer.dart';
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
         primaryColor: AppColors.primary1,
         fontFamily: FontRes.POPPINS
       ),
-      home: const OnBoardingView(),
+      home: const LoginView(),
     );
   }
 }
